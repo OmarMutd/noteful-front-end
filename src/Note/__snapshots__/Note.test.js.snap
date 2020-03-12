@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note component renders a .Note by default 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
+
+exports[`Note component renders the Note given props 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
