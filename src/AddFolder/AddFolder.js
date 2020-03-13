@@ -66,7 +66,7 @@ export default class AddFolder extends Component {
     return (
       <section className='AddFolder'>
         <h2>Create a folder</h2>
-        {/* <NotefulError> */}
+        <NotefulError>
         <form className="Noteful-form" onSubmit={(e) => {this.handleSubmit(e)}}>
           <div className='field'>
             <label htmlFor='folder-name-input'>
@@ -81,7 +81,7 @@ export default class AddFolder extends Component {
           </div>
           {this.generateErrorMessage() ? <p>{this.generateErrorMessage()}</p> : ''}
         </form>
-        {/* </NotefulError> */}
+        </NotefulError>
       </section>
     )
   }

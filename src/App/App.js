@@ -17,38 +17,38 @@ class App extends Component {
 		folders: []
 	};
 
-	componentDidMount() {
-		Promise.all([
-			fetch(`${config.API_ENDPOINT}/notes`, {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-          'Authorization': `Bearer ${config.API_TOKEN}`
-        }
-      }),
-			fetch(`${config.API_ENDPOINT}/folders`, {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-          'Authorization': `Bearer ${config.API_TOKEN}`
-        }
-      })
-		])
-		.then(([notesRes, foldersRes]) => {
-			if (!notesRes.ok)
-				return notesRes.json().then(e => Promise.reject(e));
-			if (!foldersRes.ok)
-				return foldersRes.json().then(e => Promise.reject(e));
+	// componentDidMount() {
+	// 	Promise.all([
+	// 		fetch(`${config.API_ENDPOINT}/notes`, {
+    //     method: 'GET',
+    //     headers: {
+    //       'content-type': 'application/json',
+    //       'Authorization': `Bearer ${config.API_TOKEN}`
+    //     }
+    //   }),
+	// 		fetch(`${config.API_ENDPOINT}/folders`, {
+    //     method: 'GET',
+    //     headers: {
+    //       'content-type': 'application/json',
+    //       'Authorization': `Bearer ${config.API_TOKEN}`
+    //     }
+    //   })
+	// 	])
+	// 	.then(([notesRes, foldersRes]) => {
+	// 		if (!notesRes.ok)
+	// 			return notesRes.json().then(e => Promise.reject(e));
+	// 		if (!foldersRes.ok)
+	// 			return foldersRes.json().then(e => Promise.reject(e));
 
-      return Promise.all([notesRes.json(), foldersRes.json()]);
-		})
-		.then(([notes, folders]) => {
-			this.setState({notes, folders});
-		})
-		.catch(error => {
-			console.error({error});
-		});
-	}
+    //   return Promise.all([notesRes.json(), foldersRes.json()]);
+	// 	})
+	// 	.then(([notes, folders]) => {
+	// 		this.setState({notes, folders});
+	// 	})
+	// 	.catch(error => {
+	// 		console.error({error});
+	// 	});
+	// }
 
 	handleAddFolder = folder => {
     const newFolders = this.state.folders.concat(folder)
