@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "now ./build",
+    "deploy": "now --prod ./build",
     "postdeploy": "now ./build/now.json"
   },
   "eslintConfig": {
