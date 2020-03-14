@@ -66,6 +66,11 @@ export default class AddNote extends Component {
       folder_id: Number(folderId),
       modified: modified
     }
+    if(!name || !content) {
+      alert('must have name or content')
+    } else {
+
+    
     fetch(`${config.API_ENDPOINT}/notes`, {
       method: 'POST',
       headers: {
@@ -88,7 +93,7 @@ export default class AddNote extends Component {
       console.error({ error })
     })
   }
-
+  }
 
   render() {
     const { folders } = this.props
@@ -123,7 +128,7 @@ export default class AddNote extends Component {
             </select>
           </div>
           <div className='buttons'>
-            <button disabled={this.generateErrorMessage() || !this.state.name.value || !this.state.text.value} type='submit'>
+            <button type='submit'>
               Add note
             </button>
           </div>
