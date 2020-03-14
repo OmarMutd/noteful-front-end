@@ -75,7 +75,7 @@ export default class AddFolder extends Component {
             <input type='text' id='folder-name-input' onChange={(e) => {this.newFolder(e.target.value)}} />
           </div>
           <div className='buttons'>
-            <button type='submit'>
+            <button disabled={this.generateErrorMessage() || !this.state.name.value} type='submit'>
               Add folder
             </button>
           </div>

@@ -10,6 +10,8 @@ import AddNote from '../AddNote/AddNote'
 import ApiContext from '../ApiContext';
 import config from '../config';
 import './App.css';
+import ErrorBoundary1 from "../ErrorBoundary1/ErrorBoundary1.js"
+
 
 class App extends Component {
 	state = {
@@ -132,6 +134,7 @@ class App extends Component {
 			deleteNote: this.handleDeleteNote,
 		};
 		return (
+			<ErrorBoundary1>
 			<ApiContext.Provider value={value}>
 				<div className="App">
 					<nav className="App__nav">{this.renderNavRoutes()}</nav>
@@ -144,6 +147,7 @@ class App extends Component {
 					<main className="App__main">{this.renderMainRoutes()}</main>
 				</div>
 			</ApiContext.Provider>
+			</ErrorBoundary1>
 		);
   }
 }
