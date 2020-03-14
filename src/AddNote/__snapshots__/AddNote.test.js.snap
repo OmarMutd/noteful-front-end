@@ -7,65 +7,64 @@ exports[`AddNote component renders the complete form 1`] = `
   <h2>
     Create a note
   </h2>
-  <NotefulError>
-    <form
-      className="Noteful-form"
-      onSubmit={[Function]}
+  <form
+    className="Noteful-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="field"
     >
-      <div
-        className="field"
+      <label
+        htmlFor="note-name-input"
       >
-        <label
-          htmlFor="note-name-input"
-        >
-          Name
-        </label>
-        <input
-          id="note-name-input"
-          type="text"
-        />
-      </div>
-      <div
-        className="field"
+        Name
+      </label>
+      <input
+        id="note-name-input"
+        type="text"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="note-content-input"
       >
-        <label
-          htmlFor="note-content-input"
-        >
-          Content
-        </label>
-        <textarea
-          id="note-content-input"
-        />
-      </div>
-      <div
-        className="field"
+        Content
+      </label>
+      <textarea
+        id="note-content-input"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="note-folder-select"
       >
-        <label
-          htmlFor="note-folder-select"
-        >
-          Folder
-        </label>
-        <select
-          id="note-folder-select"
-        >
-          <option
-            value={null}
-          >
-            ...
-          </option>
-        </select>
-      </div>
-      <div
-        className="buttons"
+        Folder
+      </label>
+      <select
+        id="note-folder-select"
       >
-        <button
-          type="submit"
+        <option
+          value={null}
         >
-          Add note
-        </button>
-      </div>
-    </form>
-  </NotefulError>
+          ...
+        </option>
+      </select>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        disabled={true}
+        type="submit"
+      >
+        Add note
+      </button>
+    </div>
+  </form>
 </section>
 `;
 
